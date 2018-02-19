@@ -11,3 +11,8 @@ def addOne(x):
     return x+1
     
 applyToEach(testList, addOne)
+
+def square(x):
+    return x*x
+    
+applyToEach(testList, square)
