@@ -35,7 +35,6 @@ def getGuessedWord(secretWord, lettersGuessed):
     for letter in secretWord:
         if letter in lettersGuessed:
             newWord += letter
-
         else:
             newWord += ' _ '
 
