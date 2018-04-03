@@ -31,7 +31,6 @@ def getWordScore(word, n):
     """
     # TO DO ... <-- Remove this comment when you code this function
     sum_score = 0
-    total_score = 0
     word_length = len(word)
 
     for letter in word:
