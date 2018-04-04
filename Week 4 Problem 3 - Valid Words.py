@@ -28,6 +28,7 @@ def isValidWord(word, hand, wordList):
         return False
 
     word_dict = getFrequencyDict(word)
+    
     for key in word_dict.keys():
         if key not in hand.keys():
             return False
