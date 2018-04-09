@@ -81,9 +81,8 @@ class Message(object):
         '''
         plaintext_list_lowercase = []
         plaintext_list_uppercase = []
-        self.ciphertext_list_lowercase = []
-        self.ciphertext_list_uppercase = []
-        self.shift_dict = {}
+        ciphertext_list_lowercase = []
+        ciphertext_list_uppercase = []
 
         for let in string.ascii_lowercase:
             plaintext_list_lowercase.append(let)
@@ -92,15 +91,15 @@ class Message(object):
             plaintext_list_uppercase.append(ter)
 
         for i in range(0, 26 - shift):
-            self.ciphertext_list_lowercase.append(plaintext_list_lowercase[i + shift])
-            self.ciphertext_list_uppercase.append(plaintext_list_uppercase[i + shift])
+            ciphertext_list_lowercase.append(plaintext_list_lowercase[i + shift])
+            ciphertext_list_uppercase.append(plaintext_list_uppercase[i + shift])
 
         for j in range(-shift, 0):
-            self.ciphertext_list_lowercase.append(plaintext_list_lowercase[j + shift])
-            self.ciphertext_list_uppercase.append(plaintext_list_uppercase[j + shift])
+            ciphertext_list_lowercase.append(plaintext_list_lowercase[j + shift])
+            ciphertext_list_uppercase.append(plaintext_list_uppercase[j + shift])
 
         plaintext_list = plaintext_list_lowercase + plaintext_list_uppercase
-        ciphertext_list = self.ciphertext_list_lowercase + self.ciphertext_list_uppercase
+        ciphertext_list = ciphertext_list_lowercase + ciphertext_list_uppercase
 
         self.shift_dict = dict(zip(plaintext_list, ciphertext_list))
 
@@ -121,7 +120,6 @@ class Message(object):
         self.shift_string = ""
         original_string = self.get_message_text()
         shift_dict = self.build_shift_dict(shift)
-
 
         for letter in original_string:
             if letter not in string.punctuation and letter not in string.digits and letter != " ":
