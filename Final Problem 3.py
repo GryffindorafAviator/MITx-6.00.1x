@@ -12,3 +12,31 @@
 # the total number of McNuggets equals n, and otherwise returns False. 
 # Hint: use a guess and check approach.
 
+def McNuggets(n):
+    """
+    n is an int
+
+    Returns True if some integer combination of 6, 9 and 20 equals n
+    Otherwise returns False.
+    """
+    # Your Code Here
+
+    high = n//6+1
+
+    if n != 0:
+        for i in range(high):
+            for j in range(high):
+                for k in range(high):
+                    if 6*k + 9*j + 20*i == n:
+                        return True
+
+        return False
+
+    else:
+        return False
+
+print(McNuggets(15))
+print(McNuggets(16))
+print(McNuggets(0))
+print(McNuggets(18))
+print(McNuggets(66))
